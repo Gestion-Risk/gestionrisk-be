@@ -1,0 +1,5 @@
+from .capacitacionesViews           import CreateCapacitaciones, DeleteCapacitaciones, ListCapacitaciones, UpdateCapacitaciones
+from .registroViews                 import ListAllRegistro, DeleteRegistro, ListDetailRegistro,CreateRegistro
+
+from .trabajadoresViews             import ListAllTrabajadores
+from .userView                      import Login, Logout, UserCreateView

@@ -1,0 +1,9 @@
+Django
+djangorestframework
+djangorestframework-simplejwt
+numpy
+psycopg2-binary
+django-filter
+asgiref
+django-decorator-include
+django-decorator-plus
