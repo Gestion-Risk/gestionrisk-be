@@ -6,3 +6,5 @@ django-filter
 asgiref
 django-decorator-include
 django-decorator-plus
+django-heroku
+gunicorn
