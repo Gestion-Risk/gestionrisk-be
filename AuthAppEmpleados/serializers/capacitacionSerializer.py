@@ -7,7 +7,7 @@ class CapacitacionSerializer(serializers.ModelSerializer):
     areacapacitacion = AreaCapacitacionesSerliazer
     class Meta:
         model = Capacitacion
-        fields = ['curso','idAreaCapacitacionFk','fecha']
+        fields = ['curso','idAreaCapacitacionFk','fecha', 'hora']
         
     def create(self, validated_data):
         userInstance = Capacitacion.objects.create(**validated_data)
@@ -20,6 +20,7 @@ class CapacitacionSerializer(serializers.ModelSerializer):
             'id_capacitacion'   :   capacitacion.idCapacitacion,
             'curso'             :   capacitacion.curso,
             'fecha'             :   capacitacion.fecha,
+            'hora'              :   capacitacion.hora,
             'idAreaCapacitacionFk_id'  : {
                     'area'  :   areacapacitacion.area,
                     'descripcion'   :   areacapacitacion.descripcion

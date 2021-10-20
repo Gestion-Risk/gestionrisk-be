@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-ewb75dqqkrz83u*&*0#b-q_f74890-op38%4fn=&3y=dw)7ib^
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS' : 
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework.authtoken',
     'AuthAppEmpleados',
+    'corsheaders',
 ]
 
 
@@ -70,6 +71,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 

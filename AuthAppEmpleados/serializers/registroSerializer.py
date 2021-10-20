@@ -43,7 +43,8 @@ class RegistroSerializer(serializers.ModelSerializer):
             },
             'idCapacitacionFk'    :   {
                         'curso'     :   capacitacion.curso,
-                        'fecha'     :   capacitacion.fecha, 
+                        'fecha'     :   capacitacion.fecha,
+                        'hora'      :   capacitacion.hora, 
                         'idAreaCapacitacionFk'    :   {
                             'area'  :   areacapacitacion.area,
                             'descripcion'   :   areacapacitacion.descripcion

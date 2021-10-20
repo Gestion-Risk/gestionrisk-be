@@ -29,6 +29,10 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', 'ec2-34-199-209-37.compute-1.amazonaws.com']
 
+CORS_ALLOWED_ORIGINS = [ 
+        "http://localhost", 
+] 
+
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS' : 
@@ -49,6 +53,7 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework.authtoken',
     'AuthAppEmpleados',
+    'corsheaders',
 ]
 
 
@@ -71,6 +76,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 
