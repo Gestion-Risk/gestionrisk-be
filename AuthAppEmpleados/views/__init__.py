@@ -2,4 +2,4 @@ from .capacitacionesViews           import CreateCapacitaciones, DeleteCapacitac
 from .registroViews                 import ListAllRegistro, DeleteRegistro, ListDetailRegistro,CreateRegistro
 
 from .trabajadoresViews             import ListAllTrabajadores
-from .userView                      import Login, Logout, UserCreateView
+from .userView                      import UserCreateView

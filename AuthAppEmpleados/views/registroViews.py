@@ -12,7 +12,7 @@ class ListAllRegistro(generics.ListAPIView):
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['cedulaTrabajador', 'idRegistro'] 
     permission_classes = (IsAuthenticated,)
-    authentication_classes = (TokenAuthentication,)
+
 
     def get_queryset(self):
         queryset = Registro.objects.all()
@@ -23,7 +23,6 @@ class ListDetailRegistro(generics.RetrieveAPIView):
     serializer_class = RegistroSerializer
     queryset = Registro.objects.all()
     permission_classes = (IsAuthenticated,)
-    authentication_classes = (TokenAuthentication,) 
 
     def get(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
@@ -33,7 +32,6 @@ class DeleteRegistro(generics.DestroyAPIView):
     serializer_class = RegistroSerializer
     queryset = Registro.objects.all()
     permission_classes = (IsAuthenticated,)
-    authentication_classes = (TokenAuthentication,) 
 
     def delete(self, request, *args, **kwargs):
         return super().destroy(request, *args, **kwargs)
@@ -42,7 +40,6 @@ class DeleteRegistro(generics.DestroyAPIView):
 class CreateRegistro(generics.CreateAPIView):
     serializer_class = RegistroSerializer
     permission_classes = (IsAuthenticated,)
-    authentication_classes = (TokenAuthentication,) 
 
     def post(self, request, *args, **kwargs):
         serializer = RegistroSerializer(data=request.data)

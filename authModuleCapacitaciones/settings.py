@@ -27,7 +27,9 @@ SECRET_KEY = 'django-insecure-ewb75dqqkrz83u*&*0#b-q_f74890-op38%4fn=&3y=dw)7ib^
 DEBUG = True
 
 ALLOWED_HOSTS = []
-CORS_ALLOW_ALL_ORIGINS = True
+""" CORS_ALLOW_ALL_ORIGINS = True """
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS' : 
@@ -46,7 +48,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_filters',
-    'rest_framework.authtoken',
     'AuthAppEmpleados',
     'corsheaders',
 ]
@@ -74,6 +75,14 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
+REST_FRAMEWORK = {
+	'DEFAULT_PERMISSION_CLASSES': (
+		'rest_framework.permissions.AllowAny',
+	),
+	'DEFAULT_AUTHENTICATION_CLASSES': (
+		'rest_framework_simplejwt.authentication.JWTAuthentication',
+	)
+}
 
 
 AUTH_USER_MODEL = 'AuthAppEmpleados.User'
@@ -83,7 +92,7 @@ ROOT_URLCONF = 'authModuleCapacitaciones.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

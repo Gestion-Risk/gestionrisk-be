@@ -18,30 +18,27 @@ from django.contrib import admin
 from django.urls    import path, include
 from rest_framework.authtoken   import views
 from AuthAppEmpleados   import views as authAppViews
+from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView)
 
 
 
 urlpatterns = [
     path('admin/',          admin.site.urls), #use defaul Djando Admin
 
+    path('login/',          TokenObtainPairView.as_view()), # use credentials to return tokens
+    path('refresh/',        TokenRefreshView.as_view()), # generate new access token
+
     path('createuser/',     authAppViews.UserCreateView.as_view()), # create a new user
-    path('generate/',       views.ObtainAuthToken.as_view()),
-
-    path('loginuser/',      authAppViews.Login.as_view()), #Login del user
-    path('api/1.0/',        include(('AuthAppEmpleados.urls', 'api'))),
-    path('logout/',         authAppViews.Logout.as_view()),#Salir de la sesion
-
+    
     path('createcapacitaciones/', authAppViews.CreateCapacitaciones.as_view()), # Create a new capacitacion
     path('deletecapacitaciones/<int:pk>',   authAppViews.DeleteCapacitaciones.as_view()), #Delete capacitaciones
-    path('listcapacitaciones/',             authAppViews.ListCapacitaciones.as_view(), name='list_capa'), #List all capacitaciones
+    path('listcapacitaciones/',             authAppViews.ListCapacitaciones.as_view()), #List all capacitaciones
     path('updatecapacitaciones/<int:pk>',           authAppViews.UpdateCapacitaciones.as_view()), #Update all capacitaciones
-    
-    #path('listonetrabajadores/<int:pk>',    authAppViews.ListFilterTrabajadores.as_view()),#Muestra info por cedula
+
     path('listalltrabajadores/',            authAppViews.ListAllTrabajadores.as_view()), #Lista todos los trabajdores
 
     path('createregistros/',    authAppViews.CreateRegistro.as_view()),#Crea registros
     path('listallregistros/',   authAppViews.ListAllRegistro.as_view()),#Lista todos los registro hechos
-    #path('listoneregistros/<int:pk>',   authAppViews.ListDetailRegistro.as_view()),#Lista registro especifico
     path('deleteregistros/<int:pk>',    authAppViews.DeleteRegistro.as_view()), #ELimina un registro
     
   
