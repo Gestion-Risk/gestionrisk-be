@@ -30,7 +30,8 @@ DEBUG = False
 ALLOWED_HOSTS = ['localhost', 'ec2-34-199-209-37.compute-1.amazonaws.com']
 
 CORS_ALLOWED_ORIGINS = [ 
-        "http://localhost", 
+        "http://localhost",
+        "https://gestionrisk-be.herokuapp.com", 
 ] 
 
 
