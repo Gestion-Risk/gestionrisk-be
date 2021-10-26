@@ -14,6 +14,8 @@ from pathlib    import Path
 from datetime   import timedelta
 import django_heroku
 
+from authModuleCapacitaciones.settings import CORS_ORIGIN_ALLOW_ALL
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,13 +29,18 @@ SECRET_KEY = 'django-insecure-ewb75dqqkrz83u*&*0#b-q_f74890-op38%4fn=&3y=dw)7ib^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'ec2-34-199-209-37.compute-1.amazonaws.com']
+ALLOWED_HOSTS = ['localhost', 'ec2-34-199-209-37.compute-1.amazonaws.com', "https://gestionrisk-be.herokuapp.com",]
 
-CORS_ALLOWED_ORIGINS = [ 
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost",
+    "http://gestionrisk-be.herokuapp.com",
+]
+""" CORS_ALLOWED_ORIGINS = [ 
         "http://localhost",
-        "https://gestionrisk-be.herokuapp.com", 
-] 
+        "http://gestionrisk-be.herokuapp.com", 
+]  """
 
+CORS_ORIGIN_ALLOW_ALL = True
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS' : 
