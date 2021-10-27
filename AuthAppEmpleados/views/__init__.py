@@ -3,3 +3,4 @@ from .registroViews                 import ListAllRegistro, DeleteRegistro, List
 
 from .trabajadoresViews             import ListAllTrabajadores
 from .userView                      import UserCreateView
+from .areasViews                    import ListAreas

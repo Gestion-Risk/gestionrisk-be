@@ -4,7 +4,7 @@ from rest_framework                             import serializers
 class AreaCapacitacionesSerliazer(serializers.ModelSerializer):
     class Meta:
         model = AreaCapacitacion
-        fields = ['area','descripcion']
+        fields = ['idAreaCap','area','descripcion']
 
         def to_representation(self, obj):
             areacapacitacion = AreaCapacitacion.objects.get(id=obj.idAreaCap)

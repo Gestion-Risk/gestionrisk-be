@@ -22,6 +22,7 @@ class CapacitacionSerializer(serializers.ModelSerializer):
             'fecha'             :   capacitacion.fecha,
             'hora'              :   capacitacion.hora,
             'idAreaCapacitacionFk_id'  : {
+                    'idAreaCap' : areacapacitacion.idAreaCap, 
                     'area'  :   areacapacitacion.area,
                     'descripcion'   :   areacapacitacion.descripcion
             }

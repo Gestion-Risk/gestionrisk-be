@@ -37,6 +37,8 @@ urlpatterns = [
 
     path('listalltrabajadores/',            authAppViews.ListAllTrabajadores.as_view()), #Lista todos los trabajdores
 
+    path('listareas/',              authAppViews.ListAreas.as_view()), #lista areas disponibles
+
     path('createregistros/',    authAppViews.CreateRegistro.as_view()),#Crea registros
     path('listallregistros/',   authAppViews.ListAllRegistro.as_view()),#Lista todos los registro hechos
     path('deleteregistros/<int:pk>',    authAppViews.DeleteRegistro.as_view()), #ELimina un registro
