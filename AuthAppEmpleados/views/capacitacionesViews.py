@@ -3,7 +3,7 @@ from rest_framework.response                                import Response
 from AuthAppEmpleados.serializers.capacitacionSerializer    import CapacitacionSerializer
 from AuthAppEmpleados.models.capacitacion                   import Capacitacion
 from rest_framework.permissions                             import IsAuthenticated
-
+from django_filters.rest_framework                          import DjangoFilterBackend
 
 class CreateCapacitaciones(generics.CreateAPIView):
     serializer_class = CapacitacionSerializer
@@ -26,6 +26,8 @@ class DeleteCapacitaciones(generics.DestroyAPIView):
 
 
 class ListCapacitaciones(generics.ListAPIView):
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['idCapacitacion']
     serializer_class = CapacitacionSerializer
     permission_classes = (IsAuthenticated,)
 
